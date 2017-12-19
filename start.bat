@@ -1,1 +1,1 @@
-start gradlew run
+start gradlew run -Dfile.encoding=utf8

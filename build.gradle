@@ -32,7 +32,7 @@ compileJava.options.encoding = 'UTF-8'
 mainClassName = "ru.inbox.savinov_vu.MigrateDataFromExelToDbApplication"
 jar {
 	manifest {
-		attributes 'Main-Class': mainClassName
+		attributes 'Main-Class': "ru.inbox.savinov_vu.MigrateDataFromExelToDbApplication"
 	}
 }
 
