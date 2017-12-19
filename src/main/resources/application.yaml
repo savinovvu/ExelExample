@@ -1,0 +1,34 @@
+
+spring:
+  mandatory-file-encoding: utf-8
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+#    url: jdbc:hsqldb:file:bd
+    url: jdbc:hsqldb:inmemory:bd
+    username: root
+    password: root
+    driver-class-name: org.hsqldb.jdbcDriver
+    initialize: true
+
+
+#---
+#spring:
+#  profiles: init
+#  datasource:
+#    data: db/data.sql
+#---
+#spring:
+#  profiles: populate
+#  datasource:
+#    data: db/data_populate.sql
+
+
+
+
+
+
+
+
+
