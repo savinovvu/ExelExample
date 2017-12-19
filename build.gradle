@@ -19,7 +19,9 @@ apply plugin: 'org.springframework.boot'
 
 group = 'ru.inbox.savinov_vu'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.7
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 tasks.withType(Compile) {
 	options.encoding = 'UTF-8'
