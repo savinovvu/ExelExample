@@ -46,7 +46,7 @@ task wrapper(type: Wrapper) {
 dependencies {
 	compile("org.apache.poi:poi:3.17")
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-//	runtime('org.hsqldb:hsqldb')
+	runtime('org.hsqldb:hsqldb')
 	compile('com.microsoft.sqlserver:mssql-jdbc')
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
