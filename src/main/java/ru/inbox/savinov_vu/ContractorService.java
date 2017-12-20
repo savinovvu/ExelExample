@@ -16,6 +16,7 @@ public class ContractorService {
         System.out.println();
         System.out.println("added Line from Exel: " + contractors.size());
         System.out.println();
+        System.out.println(contractors.get(0));
         System.out.println("==============================================================================");
         repository.save(contractors);
     }
