@@ -20,6 +20,12 @@ public class ContractorService {
         List<Contractor> contractors = repository.findAll();
         System.out.println(contractors.size());
         System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+        for (Contractor contractor :contractors) {
+            System.out.println(contractor);
+            System.out.println("");
+        }
+        System.out.println("_______________________________________________________________________________");
+
     }
 
     private List<Contractor> getFromExcel() {
