@@ -7,7 +7,6 @@ import org.apache.poi.ss.usermodel.Row;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -15,30 +14,32 @@ import java.util.List;
 public class ExcelReader {
 
     public List<Contractor> get() {
-        try (FileInputStream fileInputStream = new FileInputStream(new File(System.getProperty("user.dir")+"/src/main/resources/Контрагенты Прогресс сервис.xls"))
+
+        File file = new File(System.getProperty("user.dir") + "/src/main/resources/Контрагенты Прогресс сервис.xls");
+
+        List<Contractor> contractors = new ArrayList<>();
+        try (FileInputStream fileInputStream = new FileInputStream(file)
         ) {
 
             HSSFWorkbook workbook = new HSSFWorkbook(fileInputStream);
             HSSFSheet sheet = workbook.getSheetAt(0);
             Iterator<Row> rowIterator = sheet.iterator();
-            List<Contractor> contractors = new ArrayList<>();
             while (rowIterator.hasNext()) {
                 Row row = rowIterator.next();
                 // Get iterator to all cells of current row
                 Iterator<Cell> cellIterator = row.cellIterator();
-                    Cell cell = cellIterator.next();
+                Cell cell = cellIterator.next();
 //                    CellType cellType = cell.getCellTypeEnum();
-                    String nameAndDescription = cell.getStringCellValue();
-                    contractors.add(new Contractor(nameAndDescription, nameAndDescription));
+                String nameAndDescription = cell.getStringCellValue();
+                contractors.add(new Contractor(nameAndDescription, nameAndDescription));
             }
             System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
             System.out.println(contractors.size());
 
             return contractors;
 
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
         }
-        return null;
+        return contractors;
     }
 }

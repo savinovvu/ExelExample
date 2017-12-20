@@ -41,7 +41,7 @@ public class ContractorService {
 
     public void migrate() {
         List<Contractor> contractors = getFromExcel();
-//        save(contractors);
-//        getToConsoleFromBD();
+        save(contractors);
+        getToConsoleFromBD();
     }
 }
