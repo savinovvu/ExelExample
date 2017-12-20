@@ -5,11 +5,11 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-
-    url: jdbc:hsqldb:mem:bd
-    username: sa
-    password:
-    driver-class-name: org.hsqldb.jdbcDriver
+#     БД для тестов
+#    url: jdbc:hsqldb:mem:bd
+#    username: sa
+#    password:
+#    driver-class-name: org.hsqldb.jdbcDriver
 
 
 
@@ -18,11 +18,11 @@ spring:
 #    password: DEe0ZTwou6rV
 
 #     БД заказчика
-#    url: jdbc:sqlserver://localhost:1433;database=sed
-#    username: sa
-#    password: twaindoc
-#    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-#    initialize: true
+    url: jdbc:sqlserver://localhost:1433;database=sed
+    username: sa
+    password: twaindoc
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    initialize: true
 
 #C:\ProgramData\Oracle\Java\javapath;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Common Files\Acronis\VirtualFile\;C:\Program Files (x86)\Common Files\Acronis\VirtualFile64\;C:\Program Files (x86)\Common Files\Acronis\SnapAPI\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\
 #---
