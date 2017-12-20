@@ -18,7 +18,7 @@ spring:
 #    password: DEe0ZTwou6rV
 
 #     БД заказчика
-    url: jdbc:sqlserver://localhost:1433;database=sed
+    url: jdbc:sqlserver://localhost:1433;database=sed;CharacterSet=UTF-8
     username: sa
     password: twaindoc
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
