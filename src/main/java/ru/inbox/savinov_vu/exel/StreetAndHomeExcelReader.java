@@ -27,18 +27,14 @@ public class StreetAndHomeExcelReader {
             Iterator<Row> rowIterator = sheet.iterator();
             while (rowIterator.hasNext()) {
                 Row row = rowIterator.next();
-                // Get iterator to all cells of current row
                 Iterator<Cell> cellIterator = row.cellIterator();
                 Cell cell = cellIterator.next();
-//                    CellStreetype cellStreetype = cell.getCellStreetypeEnum();
-                String nameAndDescription = cell.getStringCellValue();
-                String utf8String = new String(nameAndDescription.getBytes("CP866"), "CP1251");
-//                String convert= new String(nameAndDescription.getBytes(), "CP866");
-
-                contractors.add(new Street(utf8String));
+                String name = cell.getStringCellValue();
+                contractors.add(new Street(name));
             }
             System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
             System.out.println(contractors.size());
+            System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
 
             return contractors;
 
