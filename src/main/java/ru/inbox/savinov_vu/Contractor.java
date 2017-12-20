@@ -29,8 +29,7 @@ public class Contractor {
     private Date last_update;
     private String code;
 
-    public Contractor(String name, String description) {
+    public Contractor(String name) {
         this.name = name;
-        this.description = description;
     }
 }

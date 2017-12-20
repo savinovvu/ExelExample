@@ -33,7 +33,7 @@ public class ExcelReader {
                 String nameAndDescription = cell.getStringCellValue();
                 String utf8String= new String(nameAndDescription.getBytes("CP866"), "CP1251");
 
-                contractors.add(new Contractor(utf8String, utf8String));
+                contractors.add(new Contractor(utf8String));
             }
             System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
             System.out.println(contractors.size());
