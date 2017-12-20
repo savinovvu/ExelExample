@@ -17,7 +17,6 @@ import java.util.UUID;
 public class Home {
 
     @Id
-//    nameAndDescription.getBytes("CP866"), "CP1251"
     private String id = String.valueOf(UUID.randomUUID());
     private Boolean is_deleted = false;
     private Date last_update;
