@@ -31,9 +31,9 @@ public class ExcelReader {
                 Cell cell = cellIterator.next();
 //                    CellType cellType = cell.getCellTypeEnum();
                 String nameAndDescription = cell.getStringCellValue();
-                String utf8String= new String(nameAndDescription.getBytes("CP1251"), "CP866");
+//                String utf8String= new String(nameAndDescription.getBytes("CP1251"), "CP866");
 
-                contractors.add(new Contractor(utf8String));
+                contractors.add(new Contractor(nameAndDescription));
             }
             System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
             System.out.println(contractors.size());
