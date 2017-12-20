@@ -12,7 +12,11 @@ spring:
 #    driver-class-name: org.hsqldb.jdbcDriver
 
 
-    url: jdbc:jtds:sqlserver://localhost:1433/sed;user=sa;password=Gfhjkm12
+#    url: jdbc:jtds:sqlserver://localhost:1433/sed;user=sa;password=Gfhjkm12
+#    url: jdbc:jtds:sqlserver://10.2.1.155/sed;user=sed;password=DEe0ZTwou6rV
+#    url: jdbc:sqlserver://10.2.1.155:1433
+#    username: sa
+    url: jdbc:sqlserver://localhost:1433
     username: sa
     password: twaindoc
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
