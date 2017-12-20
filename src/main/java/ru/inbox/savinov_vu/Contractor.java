@@ -21,7 +21,7 @@ public class Contractor {
     private Boolean is_group;
     private String parent_id;
     private String name;
-//    private String description;
+    private String description;
     private String topdepartment_id;
     private String contractor_type = "LEGAL";
     private String inn;
