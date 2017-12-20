@@ -26,7 +26,7 @@ public class Contractor {
     private String contractor_type = "LEGAL";
     private String inn;
     private String category = "OTHER";
-    private Date last_update;
+    private Date last_update = new Date();
     private String code;
 
     public Contractor(String name) {
