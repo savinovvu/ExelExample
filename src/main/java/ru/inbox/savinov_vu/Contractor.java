@@ -26,6 +26,7 @@ public class Contractor {
     private String contractor_type = "LEGAL";
     private String inn;
     private String category = "OTHER";
+    @OrderBy
     private Date last_update = new Date();
     private String code;
 

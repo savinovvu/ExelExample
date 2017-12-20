@@ -19,7 +19,8 @@ spring:
 
 #    url: jdbc:sqlserver://localhost:1433;database=sed;CharacterSet=CP-1251
 #     БД заказчика
-    url: jdbc:sqlserver://localhost:1433;database=sed;characterEncoding=CP1251
+#    url: jdbc:sqlserver://localhost:1433;database=sed;characterEncoding=CP1251
+    url: jdbc:sqlserver://localhost:1433;database=sed;
     username: sa
     password: twaindoc
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
