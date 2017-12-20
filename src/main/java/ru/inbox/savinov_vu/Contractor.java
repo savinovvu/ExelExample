@@ -17,7 +17,7 @@ public class Contractor {
 
     @Id
     private UUID id = UUID.randomUUID();
-    private Boolean is_deleted;
+    private Boolean is_deleted = false;
     private Boolean is_group;
     private String parent_id;
     private String name;

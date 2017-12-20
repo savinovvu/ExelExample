@@ -31,10 +31,10 @@ public class ExcelReader {
                 Cell cell = cellIterator.next();
 //                    CellType cellType = cell.getCellTypeEnum();
                 String nameAndDescription = cell.getStringCellValue();
-//                String utf8String= new String(nameAndDescription.getBytes("CP866"), "CP1251");
-                String convert= new String(nameAndDescription.getBytes(), "CP866");
+                String utf8String= new String(nameAndDescription.getBytes("CP866"), "CP1251");
+//                String convert= new String(nameAndDescription.getBytes(), "CP866");
 
-                contractors.add(new Contractor(convert));
+                contractors.add(new Contractor(utf8String));
             }
             System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
             System.out.println(contractors.size());
