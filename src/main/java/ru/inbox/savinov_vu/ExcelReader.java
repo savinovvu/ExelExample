@@ -15,7 +15,7 @@ import java.util.List;
 public class ExcelReader {
 
     public List<Contractor> get() {
-        try (FileInputStream fileInputStream = new FileInputStream(new File(System.getProperty("user.dir")+"/src/main/resources/Контрагенты Прогресс сервис.xls"));
+        try (FileInputStream fileInputStream = new FileInputStream(new File(System.getProperty("user.dir")+"/src/main/resources/Контрагенты Прогресс сервис.xls"))
         ) {
 
             HSSFWorkbook workbook = new HSSFWorkbook(fileInputStream);

@@ -12,18 +12,15 @@ spring:
 #    driver-class-name: org.hsqldb.jdbcDriver
 
 
-#    url: jdbc:jtds:sqlserver://localhost:1433/sed;user=sa;password=Gfhjkm12
 
 #    url: jdbc:sqlserver://10.2.1.155:1433;database=sed
 #    username: sed
 #    password: DEe0ZTwou6rV
 
-
+#     БД заказчика
     url: jdbc:sqlserver://localhost:1433;database=sed
     username: sa
     password: twaindoc
-
-
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     initialize: true
 
