@@ -1,9 +1,10 @@
-package ru.inbox.savinov_vu;
+package ru.inbox.savinov_vu.exel;
 
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+import ru.inbox.savinov_vu.model.Street;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,13 +12,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class ExcelReader {
+public class StreetAndHomeExcelReader {
 
-    public List<Contractor> get() {
+    public List<Street> get() {
 
-        File file = new File(System.getProperty("user.dir") + "/src/main/resources/Контрагенты Прогресс сервис.xls");
+        File file = new File(System.getProperty("user.dir") + "/src/main/resources/улицы.xls");
 
-        List<Contractor> contractors = new ArrayList<>();
+        List<Street> contractors = new ArrayList<>();
         try (FileInputStream fileInputStream = new FileInputStream(file)
         ) {
 
@@ -29,12 +30,12 @@ public class ExcelReader {
                 // Get iterator to all cells of current row
                 Iterator<Cell> cellIterator = row.cellIterator();
                 Cell cell = cellIterator.next();
-//                    CellType cellType = cell.getCellTypeEnum();
+//                    CellStreetype cellStreetype = cell.getCellStreetypeEnum();
                 String nameAndDescription = cell.getStringCellValue();
-                String utf8String= new String(nameAndDescription.getBytes("CP866"), "CP1251");
+                String utf8String = new String(nameAndDescription.getBytes("CP866"), "CP1251");
 //                String convert= new String(nameAndDescription.getBytes(), "CP866");
 
-                contractors.add(new Contractor(utf8String));
+                contractors.add(new Street(utf8String));
             }
             System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
             System.out.println(contractors.size());

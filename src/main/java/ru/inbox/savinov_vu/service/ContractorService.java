@@ -1,7 +1,10 @@
-package ru.inbox.savinov_vu;
+package ru.inbox.savinov_vu.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.inbox.savinov_vu.model.Contractor;
+import ru.inbox.savinov_vu.exel.ContractorExcelReader;
+import ru.inbox.savinov_vu.repository.ContractorRepository;
 
 import java.util.List;
 
@@ -28,16 +31,15 @@ public class ContractorService {
         System.out.println("Count line in BD: " + contractors.size());
         System.out.println();
         System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-        for (Contractor contractor :contractors) {
+        for (Contractor contractor : contractors) {
             System.out.println(contractor);
             System.out.println("");
         }
         System.out.println("_______________________________________________________________________________");
-
     }
 
     private List<Contractor> getFromExcel() {
-        return new ExcelReader().get();
+        return new ContractorExcelReader().get();
     }
 
     public void migrate() {

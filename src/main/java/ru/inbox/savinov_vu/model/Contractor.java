@@ -1,4 +1,4 @@
-package ru.inbox.savinov_vu;
+package ru.inbox.savinov_vu.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
