@@ -3,6 +3,7 @@ package ru.inbox.savinov_vu.exel;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import ru.inbox.savinov_vu.model.Apartment;
 import ru.inbox.savinov_vu.model.Home;
@@ -106,9 +107,10 @@ public class ExcelReader {
     private void setEntitiesValues(Iterator<Cell> cellIterator, StringBuilder streetName,
                                    StringBuilder homeName, StringBuilder apartmentName, StringBuilder managementCompanyName) {
         int columnNumber = 0;
+        DataFormatter formatter = new DataFormatter();
         while (cellIterator.hasNext()) {
             Cell cell = cellIterator.next();
-            String cellValue = cell.getStringCellValue();
+            String cellValue = formatter.formatCellValue(cell);
             switch (columnNumber) {
                 case 0:
                     if ("".equals(cellValue)) {
