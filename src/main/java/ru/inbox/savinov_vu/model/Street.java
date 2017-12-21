@@ -2,7 +2,6 @@ package ru.inbox.savinov_vu.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -13,7 +12,6 @@ import java.util.UUID;
 @Entity
 @Data
 @NoArgsConstructor
-@ToString
 @Table(name = "dict_street")
 public class Street {
 
@@ -28,6 +26,7 @@ public class Street {
     private List<Home> homes;
 
     public Street(String name) {
+        name = name.trim();
         this.name = name;
     }
 
@@ -41,7 +40,11 @@ public class Street {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(name);
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }

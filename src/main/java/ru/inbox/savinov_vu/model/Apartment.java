@@ -1,12 +1,12 @@
 package ru.inbox.savinov_vu.model;
 
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -14,8 +14,8 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @ToString
-@Table(name = "dict_building")
-public class Home {
+@Table(name = "dict_Apartment")
+public class Apartment {
 
     @Id
     private String id = String.valueOf(UUID.randomUUID());
@@ -23,20 +23,18 @@ public class Home {
     private Date last_update;
     private String name;
     private String full_name;
-    private String management_company;
+
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "streetId", nullable = false)
-    private Street streetId;
+    @JoinColumn(name = "buildingId", nullable = false)
+    private Home buildingId;
 
-    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, mappedBy = "homes")
-    private List<Home> homes;
 
-    public Home(String name, Street streetId, String management_company) {
-        name = name.trim();
-        this.name = name;
-        this.streetId = streetId;
-        this.management_company = management_company;
-        full_name = streetId + " " + name;
+
+    public Apartment(String apartmentName, Home home) {
+        apartmentName = apartmentName.trim();
+        this.name = apartmentName;
+        this.buildingId = home;
+        this.full_name = buildingId.getFull_name() + " - " + name;
     }
 
     @Override
@@ -44,8 +42,8 @@ public class Home {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        Home home = (Home) o;
-        return Objects.equals(full_name, home.full_name);
+        Apartment apartment = (Apartment) o;
+        return Objects.equals(full_name, apartment.full_name);
     }
 
     @Override
