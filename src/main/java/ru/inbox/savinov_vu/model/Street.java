@@ -35,16 +35,16 @@ public class Street {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Street street = (Street) o;
-        return Objects.equals(name, street.name);
+        return Objects.equals(name.trim().toLowerCase(), street.name.trim().toLowerCase());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name.trim().toLowerCase());
     }
 
     @Override
     public String toString() {
-        return name;
+        return name.trim();
     }
 }

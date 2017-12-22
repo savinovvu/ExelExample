@@ -32,6 +32,10 @@ public class Home {
     private List<Home> homes;
 
     public Home(String name, Street streetId, String management_company) {
+
+        if (streetId == null) {
+            throw new IllegalArgumentException("нет улицы");
+        }
         name = name.trim();
         this.name = name;
         this.streetId = streetId;
@@ -45,11 +49,11 @@ public class Home {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Home home = (Home) o;
-        return Objects.equals(full_name, home.full_name);
+        return Objects.equals(full_name, home.full_name.trim().toLowerCase());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), full_name);
+        return Objects.hash(super.hashCode(), full_name.trim().toLowerCase());
     }
 }

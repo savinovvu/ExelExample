@@ -27,11 +27,12 @@ public class ExcelReader {
 
         File file = getFile();
 
+        int i = 0;
         try (FileInputStream fileInputStream = new FileInputStream(file)
         ) {
             Iterator<Row> rowIterator = getRowIterator(fileInputStream);
-
             while (rowIterator.hasNext()) {
+                i++;
                 Row row = rowIterator.next();
                 Iterator<Cell> cellIterator = row.cellIterator();
                 StringBuilder streetNameBuilder = new StringBuilder();
@@ -60,41 +61,43 @@ public class ExcelReader {
             System.out.println(e.getMessage());
             System.out.println();
             System.out.println("___________________________________________________________________________");
-
-            return container;
         }
         return container;
     }
 
     private Street getStreet(Map<String, Street> streetMap, String streetName) {
         Street street = null;
+        streetName = streetName.trim();
         if (streetMap.containsKey(streetName)) {
             street = streetMap.get(streetName);
         } else {
             street = new Street(streetName);
             streetMap.put(streetName, street);
         }
+        if (street == null) {
+            System.out.println();
+        }
         return street;
     }
 
     private Home getHome(Map<String, Home> homeMap, String homeName, Street street, String managementCompanyName) {
-        Home home = null;
-        if (homeMap.containsKey(homeName)) {
-            home = homeMap.get(homeName);
+        homeName = homeName.trim();
+        Home home = new Home(homeName, street, managementCompanyName);
+        if (homeMap.containsKey(home.getFull_name())) {
+            home = homeMap.get(home.getFull_name());
         } else {
-            home = new Home(homeName, street, managementCompanyName);
-            homeMap.put(homeName, home);
+            homeMap.put(home.getFull_name(), home);
         }
         return home;
     }
 
     private Apartment getApartment(Map<String, Apartment> apartmentMap, String apartmentName, Home home) {
-        Apartment apartment = null;
-        if (apartmentMap.containsKey(apartmentName)) {
-            apartment = apartmentMap.get(apartmentName);
+        apartmentName = apartmentName.trim();
+        Apartment apartment = new Apartment(apartmentName, home);
+        if (apartmentMap.containsKey(apartment.getFull_name())) {
+            apartment = apartmentMap.get(apartment.getFull_name());
         } else {
-            apartment = new Apartment(apartmentName, home);
-            apartmentMap.put(apartmentName, apartment);
+            apartmentMap.put(apartment.getFull_name(), apartment);
         }
         return apartment;
     }

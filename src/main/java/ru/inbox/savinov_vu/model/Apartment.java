@@ -43,11 +43,11 @@ public class Apartment {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Apartment apartment = (Apartment) o;
-        return Objects.equals(full_name, apartment.full_name);
+        return Objects.equals(full_name, apartment.full_name.trim().toLowerCase());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), full_name);
+        return Objects.hash(super.hashCode(), full_name.trim().toLowerCase());
     }
 }
