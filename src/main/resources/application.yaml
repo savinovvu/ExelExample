@@ -1,11 +1,13 @@
-
 spring:
   mandatory-file-encoding: utf-8
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
   datasource:
-    data: classpath:sql/sqlScript.sql
+#    data: classpath:sql/sqlScript.sql
 #     БД для тестов hsqldb
 #    url: jdbc:hsqldb:mem:bd
 #    username: sa

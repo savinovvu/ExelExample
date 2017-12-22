@@ -17,7 +17,7 @@ public class Street {
 
     @Id
     private String id = String.valueOf(UUID.randomUUID());
-    private Boolean is_deleted = false;
+    private String is_deleted = "0";
     private Date last_update;
     private String name;
 
