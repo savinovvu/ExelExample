@@ -16,7 +16,6 @@ public class StreetService {
     private StreetRepository repository;
 
 
-
     public void add(Map<String, Street> streetMap) {
         Collection<Street> values = streetMap.values();
         repository.save(values);

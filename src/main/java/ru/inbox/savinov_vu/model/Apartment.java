@@ -29,7 +29,6 @@ public class Apartment {
     private Home buildingId;
 
 
-
     public Apartment(String apartmentName, Home home) {
         apartmentName = apartmentName.trim();
         this.name = apartmentName;

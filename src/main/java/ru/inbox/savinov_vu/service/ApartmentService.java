@@ -14,7 +14,7 @@ public class ApartmentService {
     @Autowired
     ApartmentRepository repository;
 
-    public void add(Map<String,Apartment> apartmentMap) {
+    public void add(Map<String, Apartment> apartmentMap) {
         Collection<Apartment> apartments = apartmentMap.values();
         repository.save(apartments);
     }

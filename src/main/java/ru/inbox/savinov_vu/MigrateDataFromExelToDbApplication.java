@@ -10,7 +10,6 @@ import ru.inbox.savinov_vu.service.CommonService;
 public class MigrateDataFromExelToDbApplication implements CommandLineRunner {
 
 
-
     @Autowired
     private CommonService commonService;
 
