@@ -2,6 +2,7 @@ package ru.inbox.savinov_vu.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.inbox.savinov_vu.commonInterfaces.Identify;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -13,7 +14,7 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @Table(name = "dict_street")
-public class Street {
+public class Street implements Identify {
 
     @Id
     private String id = String.valueOf(UUID.randomUUID());
