@@ -14,7 +14,7 @@ public class MetaObjectCreator {
         List<MetaObject> metaObjects = new ArrayList<>();
         for (Identify identify : identifies) {
             String metaClassName = getMetaClassName(identify);
-            MetaObject metaObject = new MetaObject(identify.getId(), "1", metaClassName);
+            MetaObject metaObject = new MetaObject(identify.getId(), metaClassName);
             metaObjects.add(metaObject);
         }
         return metaObjects;

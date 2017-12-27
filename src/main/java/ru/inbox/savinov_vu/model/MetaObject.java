@@ -21,13 +21,12 @@ public class MetaObject implements Identify {
 
     @Id
     private String id ;
-    private String is_deleted = "0";
+    private Boolean is_deleted = false;
     private String type;
     private Date last_update = new Date();
 
-    public MetaObject(String id, String is_deleted, String type) {
+    public MetaObject(String id,  String type) {
         this.id = id;
-        this.is_deleted = is_deleted;
         this.type = type;
     }
 }

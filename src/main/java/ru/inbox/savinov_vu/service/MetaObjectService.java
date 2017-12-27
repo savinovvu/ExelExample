@@ -16,6 +16,6 @@ public class MetaObjectService implements CRUD<MetaObject> {
 
     @Override
     public void add(List<MetaObject> list) {
-        repository.save(list);
+//        repository.save(list);
     }
 }
