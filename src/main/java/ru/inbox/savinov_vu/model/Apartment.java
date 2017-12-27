@@ -15,7 +15,7 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @ToString
-@Table(name = "dict_Apartment")
+@Table(name = "dict_apartment")
 public class Apartment implements Identify {
 
     @Id

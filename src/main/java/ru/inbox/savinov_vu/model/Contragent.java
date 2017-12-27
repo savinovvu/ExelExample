@@ -7,6 +7,7 @@ import ru.inbox.savinov_vu.commonInterfaces.Identify;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 import java.util.UUID;
 
@@ -14,7 +15,7 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @ToString
-//todo: @Table(name = "dict_Apartment")
+@Table(name = "dict_contractor")
 public class Contragent  implements Identify {
 
     @Id

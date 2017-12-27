@@ -23,13 +23,13 @@ public class MetaObjectCreator {
     private static String getMetaClassName(Identify identify) {
         switch (identify.getClass().getSimpleName()) {
             case "Apartment":
-                return "apartment";
+                return "dict_apartment";
             case "Home":
-                return "home";
+                return "dict_building";
             case "Street":
-                return "street";
+                return "dict_street";
             case "Contragent":
-                return "contragent";
+                return "dict_contractor";
         }
         throw new IllegalArgumentException(identify.getClass().getSimpleName());
     }
